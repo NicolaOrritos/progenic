@@ -1,0 +1,41 @@
+{
+  "name": "progenic",
+  "version": "0.6.0",
+  "main": "lib/progenic.js",
+  "description": "Multi-workers daemon module",
+  "homepage": "https://github.com/NicolaOrritos/progenic",
+  "bugs": "https://github.com/NicolaOrritos/progenic/issues",
+  "author": {
+    "name": "Nicola Orritos",
+    "email": "nicola.orritos@gmail.com",
+    "url": "nicolaorritos.github.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NicolaOrritos/progenic"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "progenic",
+    "workers daemon module"
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1",
+    "grunt-mocha-cli": "^1.9.0",
+    "jshint-stylish": "^0.2.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+    "daemon": "^1.1.0",
+    "sjl": "^0.4.0"
+  }
+}
