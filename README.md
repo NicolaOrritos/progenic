@@ -10,7 +10,8 @@ Install the module with: `npm install progenic`
 ```js
 var progenic = require('progenic');
 var numberOfWorkers = 4;
-progenic.run('myServiceName', 'path/to/myServiceScript.js', numberOfWorkers);
+var devMode         = false;
+progenic.run('myServiceName', 'path/to/myServiceScript.js', numberOfWorkers, devMode);
 ```
 
 _(More to come)_
