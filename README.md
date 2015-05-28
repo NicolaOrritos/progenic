@@ -40,7 +40,7 @@ When `devMode = true` the following happens:
 - The main process doesn't daemonize
 - The PID file is written to the same folder the server is started from
 - Log files are written to the process' working directory as well
-- `process.env.NODE_ENV` is set to `'development'`
+- `process.env.NODE_ENV` is set to `'development'` (instead of `'production'`)
 
 
 ## Contributing
