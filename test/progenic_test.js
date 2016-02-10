@@ -1,13 +1,14 @@
-/* global describe, it */
 
 'use strict';
 
-var assert   = require('assert');
-var progenic = require('../lib/progenic.js');
+/* global describe, it */
 
-describe('progenic node module.', function()
+const assert   = require('assert');
+const progenic = require('../lib/progenic.js');
+
+describe('progenic node module.', () =>
 {
-    it('must be not null', function()
+    it('must be not null', () =>
     {
         assert(progenic);
     });
