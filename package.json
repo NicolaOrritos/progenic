@@ -1,6 +1,6 @@
 {
   "name": "progenic",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.5",
   "main": "lib/progenic.js",
   "description": "Multi-workers daemon module",
   "homepage": "https://github.com/NicolaOrritos/progenic",
