@@ -1,6 +1,6 @@
 {
   "name": "progenic",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "main": "lib/progenic.js",
   "description": "Multi-workers daemon module",
   "homepage": "https://github.com/NicolaOrritos/progenic",
@@ -22,6 +22,15 @@
     "progenic",
     "workers daemon module"
   ],
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "os": [
+    "linux"
+  ],
+  "dependencies": {
+    "daemon": "^1.1.0"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
@@ -34,8 +43,5 @@
   },
   "scripts": {
     "test": "grunt"
-  },
-  "dependencies": {
-    "daemon": "^1.1.0"
   }
 }
