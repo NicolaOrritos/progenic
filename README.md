@@ -2,20 +2,23 @@
 
 Multi-workers daemon module with advanced options.
 
+
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
 - [Getting Started](#getting-started)
 - [Documentation](#documentation)
-	- [Options documentation](#options-documentation)
+	- [Main options documentation](#main-options-documentation)
 	- [Log files](#log-files)
 	- [PID file](#pid-file)
+	- [Check-pings](#check-pings)
 - [License](#license)
+
 
 ## Getting Started
 
 Install the module with: `npm install progenic`  
-Then use it to start a service with as many workers as needed:
+Then use it in your code to start a service with as many workers as needed:
 
 ```js
 const progenic = require('progenic');
@@ -25,9 +28,11 @@ progenic.run({
     main: 'path/to/myServiceScript.js',
     workers: 4,
     devMode: false,
-    logsBasePath: '/mnt/logs-volume'
+    logsBasePath: '/mnt/logs-volume',
+    checkPingsEnabled: true
 });
 ```
+
 
 ## Documentation
 
@@ -51,7 +56,7 @@ progenic.run(options);
 The progenic module starts a given service as a daemon, by spawning a configurable number of children that will act as workers.
 The father process is the one balancing the work among them.
 
-### Options documentation
+### Main options documentation
 
 The **mandatory** `name` parameter is the name the service will be started with.
 It affects the process' PID file name (under _/var/run_) as well as the log files names.
@@ -68,6 +73,7 @@ When `devMode = true` the following happens:
 - The PID file is written to the same folder the server is started from
 - Log files are written to the process' working directory as well
 - `process.env.NODE_ENV` is set to `'development'` (instead of `'production'`)
+
 
 ### Log files
 
@@ -103,13 +109,32 @@ progenic.run({
 //      -rw-r--r--   1 root    root             240 30 mar 02.41 myServiceName_master.log
 ```
 
+
 ### PID file
+
 Finally progenic will write one PID file for your process, under _/var/run_:
 ```Bash
 $ cat /var/run/myServiceName.pid
   4320
 ```
 The PID file will **not** be deleted when your service exits.
+
+
+### Check-pings
+
+When spawning workers progenic periodically checks whether they are still alive (and active) or not.
+This is done by pinging each one of them and waiting for an answer to come within 30 seconds.  
+If it fails to answer in time the worker gets killed and respawned.  
+This feature is enabled by default and can be disabled by passing the option `checkPingsEnabled` set to `false`:
+```js
+progenic.run({
+    name: 'myServiceName',
+    main: 'path/to/myServiceScript.js',
+    // [...]
+    checkPingsEnabled: false
+});
+```
+
 
 ## License
 
