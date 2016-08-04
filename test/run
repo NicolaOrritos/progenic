@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const progenic = require('../lib/progenic.js');
+
+
+if (process.argv && process.argv.length)
+{
+    progenic.run({
+        name: process.argv[2],
+        main: process.argv[2],
+        workers: 2,
+        devMode: (process.argv[3] === 'dev'),
+        logsBasePath: __dirname
+    });
+}
+else
+{
+    process.exit(1);
+}

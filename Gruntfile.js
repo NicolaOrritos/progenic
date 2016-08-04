@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         reporter: 'nyan',
         bail: true
       },
-      all: ['test/*.js']
+      all: ['test/*_test.js']
     },
     watch: {
       gruntfile: {
