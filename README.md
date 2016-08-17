@@ -12,6 +12,7 @@ Multi-workers daemon module with advanced options.
 	- [Log files](#log-files)
 	- [PID file](#pid-file)
 	- [Check-pings](#check-pings)
+	- [Rich-logging](#rich-logging)
 - [License](#license)
 
 
@@ -29,7 +30,8 @@ progenic.run({
     workers: 4,
     devMode: false,
     logsBasePath: '/mnt/logs-volume',
-    checkPingsEnabled: true
+    checkPingsEnabled: true,
+	disableRichLogger: false
 });
 ```
 
@@ -132,6 +134,35 @@ progenic.run({
     main: 'path/to/myServiceScript.js',
     // [...]
     checkPingsEnabled: false
+});
+```
+
+
+### Rich-logging
+
+_Progenic_ usually adds a timestamp to each line logged by the master, like this:
+```Bash
+$ tailf /var/log/myServiceName_master.log
+[Wed Aug 17 2016 09:05:45 GMT+0000 (UTC)] [PROGENIC] Worker "1" is alive and kicking...
+[Wed Aug 17 2016 09:05:46 GMT+0000 (UTC)] [PROGENIC] Worker "2" is alive and kicking...
+[Wed Aug 17 2016 09:05:47 GMT+0000 (UTC)] [PROGENIC] Worker "3" is alive and kicking...
+[Wed Aug 17 2016 09:05:48 GMT+0000 (UTC)] [PROGENIC] Worker "4" is alive and kicking...
+```
+
+There are times when this may not be the desired behavior, like when some logging libraries used by your code already provide a timestamp.
+Thus logging may become a bit too redundant (here using the [bunyan](https://github.com/trentm/node-bunyan) logging library):
+```Bash
+$ tailf /var/log/hephaestus.APTE_master.log | bunyan
+[2016-08-17T09:05:45.500Z]  INFO: hephaestus/30956 on vp-pre1.xorovo.it: [Wed Aug 17 2016 09:05:45 GMT+0000 (UTC)] [PROGENIC] Worker "1" is alive and kicking...
+```
+
+At times like this the `disableRichLogger` option should be used, which provides a clean logger without additional information added to it:
+```js
+progenic.run({
+    name: 'myServiceName',
+    main: 'path/to/myServiceScript.js',
+    // [...]
+    disableRichLogger: true
 });
 ```
 
