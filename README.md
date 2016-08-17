@@ -38,14 +38,21 @@ progenic.run({
 
 ## Documentation
 
+Progenic requires [NodeJS](https://nodejs.org/) 4.5.0+ and can be istalled via NPM:
+```Bash
+npm install progenic
+# or:
+npm install --save progenic
+```
+
 ```js
 // Import progenic module
 const progenic = require('progenic');
 
 // Define an options object
 const options = {
-    name: '',         		 // MANDATORY
-    main: '',         		 // MANDATORY
+    name: '...',         	 // MANDATORY
+    main: '...',         	 // MANDATORY
     workers: 'auto',  		 // OPTIONAL, defaults to 'auto'
     devMode: false,   		 // OPTIONAL, defaults to false
     logsBasePath: '', 		 // OPTIONAL, defaults to '/var/log' if devMode === false, otherwise defaults to './'
