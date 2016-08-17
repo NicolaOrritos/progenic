@@ -1,6 +1,12 @@
 # Progenic
 
-Multi-workers daemon module with advanced options.
+Multi-workers daemon module with advanced options.  
+
+[][npmdt]
+[][npmv]
+[][ghtag]
+[][ghlic]
+[][david]
 
 
 ## Table of Contents
@@ -184,3 +190,11 @@ progenic.run({
 
 Copyright (c) 2016 Nicola Orritos  
 Licensed under the MIT license.
+
+
+
+[npmdt]: https://img.shields.io/npm/dt/progenic.svg  "NPM Downloads"
+[npmv]: https://img.shields.io/npm/v/progenic.svg  "NPM Version"
+[ghtag]: https://img.shields.io/github/tag/NicolaOrritos/progenic.svg  "GitHub Tag"
+[ghlic]: https://img.shields.io/github/license/NicolaOrritos/progenic.svg  "GitHub License"
+[david]: https://img.shields.io/david/NicolaOrritos/progenic.svg  "David-dm.org Dependencies Check"
