@@ -44,19 +44,22 @@ const progenic = require('progenic');
 
 // Define an options object
 const options = {
-    name: '',         // MANDATORY
-    main: '',         // MANDATORY
-    workers: 'auto',  // OPTIONAL, defaults to 'auto'
-    devMode: false,   // OPTIONAL, defaults to 'false'
-    logsBasePath: ''  // OPTIONAL, defaults to '/var/log'
+    name: '',         		 // MANDATORY
+    main: '',         		 // MANDATORY
+    workers: 'auto',  		 // OPTIONAL, defaults to 'auto'
+    devMode: false,   		 // OPTIONAL, defaults to false
+    logsBasePath: '', 		 // OPTIONAL, defaults to '/var/log' if devMode === false, otherwise defaults to './'
+    checkPingsEnabled: true, // OPTIONAL, defaults to true
+	disableRichLogger: false // OPTIONAL, defaults to false
 };
 
 // Use the method 'run()' to start the service with the given options
 progenic.run(options);
 ```
 
-The progenic module starts a given service as a daemon, by spawning a configurable number of children that will act as workers.
-The father process is the one balancing the work among them.
+The _progenic_ module starts a given service as a daemon, by spawning a configurable number of children that will act as workers.
+The father process is the one balancing the work among them.  
+_Progenic_ leverages the [cluster](https://nodejs.org/api/cluster.html#cluster_cluster) module under the hood.
 
 ### Main options documentation
 
@@ -110,6 +113,9 @@ progenic.run({
 //      -rw-r--r--   1 root    root             122 30 mar 02.41 myServiceName_2.log
 //      -rw-r--r--   1 root    root             240 30 mar 02.41 myServiceName_master.log
 ```
+
+**Please note that writing logs to certain paths (`/var/log` is one of them) requires root provileges.**  
+This behavior may vary depending on the linux distro being used.
 
 
 ### PID file
