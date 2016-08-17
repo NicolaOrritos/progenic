@@ -2,11 +2,11 @@
 
 Multi-workers daemon module with advanced options.  
 
-[][npmdt]
-[][npmv]
-[][ghtag]
-[][ghlic]
-[][david]
+[![NPM Downloads][npmdt-image]][npmdt-url]
+[![NPM Version][npmv-image]][npmv-url]
+[![GitHub Tag][ghtag-image]][ghtag-url]
+[![GitHub License][ghlic-image]][ghlic-url]
+[![Dependencies Status][david-image]][david-url]
 
 
 ## Table of Contents
@@ -193,8 +193,13 @@ Licensed under the MIT license.
 
 
 
-[npmdt]: https://img.shields.io/npm/dt/progenic.svg  "NPM Downloads"
-[npmv]: https://img.shields.io/npm/v/progenic.svg  "NPM Version"
-[ghtag]: https://img.shields.io/github/tag/NicolaOrritos/progenic.svg  "GitHub Tag"
-[ghlic]: https://img.shields.io/github/license/NicolaOrritos/progenic.svg  "GitHub License"
-[david]: https://img.shields.io/david/NicolaOrritos/progenic.svg  "David-dm.org Dependencies Check"
+[npmdt-image]: https://img.shields.io/npm/dt/progenic.svg  "NPM Downloads"
+[npmdt-url]: https://www.npmjs.com/package/progenic
+[npmv-image]: https://img.shields.io/npm/v/progenic.svg  "NPM Version"
+[npmv-url]: https://www.npmjs.com/package/progenic
+[ghtag-image]: https://img.shields.io/github/tag/NicolaOrritos/progenic.svg  "GitHub Tag"
+[ghtag-url]: https://github.com/NicolaOrritos/progenic/releases
+[ghlic-image]: https://img.shields.io/github/license/NicolaOrritos/progenic.svg  "GitHub License"
+[ghlic-url]: https://github.com/NicolaOrritos/progenic/releases
+[david-image]: https://img.shields.io/david/NicolaOrritos/progenic.svg  "David-dm.org Dependencies Check"
+[david-url]: https://david-dm.org/NicolaOrritos/progenic
