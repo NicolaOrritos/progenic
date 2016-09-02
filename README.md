@@ -8,6 +8,8 @@ Multi-workers daemon module with advanced options.
 [![GitHub License][ghlic-image]][ghlic-url]
 [![Dependencies Status][david-image]][david-url]
 
+(For a simpler and lightweight cousin of _Progenic_ see [_Probiotic_](https://github.com/NicolaOrritos/probiotic))
+
 
 ## Table of Contents
 
